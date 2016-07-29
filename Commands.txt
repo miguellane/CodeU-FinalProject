@@ -1,13 +1,4 @@
-//Initialize
-git clone git@github.com:miguellane/codeU-FinalProject.git
-git checkout -b ZDormuth
-git remote add Final git@github.com:miguellane/codeU-FinalProject.git
-
-//Usage
-Listing	== git branch
-	== git push origin ZDormuth
-	== git checkout master
-
+//Git Commands
 git pull
 git add --all
 git commit -am "Sub Branch Test!"
