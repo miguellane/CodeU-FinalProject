@@ -45,6 +45,7 @@ User <==> //Retriever// <-- //DB//
 	Input:	x	
 	Call:	Indexer for Page Index
 	Output:	x
+	Proposed method: Working URL Doc? (Server Storage May Add Extra Run-Time)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////// Indexer
