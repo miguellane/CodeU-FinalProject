@@ -1,25 +1,57 @@
+Ideas:
+	Stream Certain Methods
+	Generate Searches as Results Appear (10 pages at a time perhaps)
+	Ignore Insig. Keyword
+
+	Operator "IFL:" I'm Feeling Lucky Implementation
+	Operator "Site:" URL Filter
+	Joke: "Cringe: Apple" Results of "Apple" in Comic Sans
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////// General Parts
 
 
-	Front End	- Format of Search & Access of Retriever
 	Retriever	- Retrieves Info from Database and Submits
         Crawler		- Crawls URLs for Info
 	Indexer		- Indexes Pages into Database
 		
 
-			  //Crawler// <-->  //Indexer//
+Admit <==> //Crawler// <-->  //Indexer//
 
-						|
-					        v
-	//Front End// <==> //Retriever// <-- //DB//
+			      |
+			      v
+User <==> //Retriever// <-- //DB//
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////// Front End
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////// Retriever
+
+	Input: 	String Line & Call to Java
+	Call:	Database for Information
+	Output:	Printed List of URLs by Relevance
+	Proposed method: jOpt-Simple
+	Proposed method: Heapsort
+	Proposed method: TF-IDF
+	Proposed method: Print of Results as Retrieved (Seperate Heapsorts into Restricted Heapsorts, Print Results 10 at a Time)
+
+	Operators: AND, OR, -, IFL:, SITE:, 50..100
+
+	
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////// Crawler
+
+	Input:	x	
+	Call:	Indexer for Page Index
+	Output:	x
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////// Indexer
+
+	Input:	URL
+	Call:	Database for Storage
+	Output:	Database Entry
+	Proposed method: MySQL Database Usage
+
+	HashMap: "Term - URL - Count"
