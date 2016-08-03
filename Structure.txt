@@ -14,9 +14,10 @@ Ideas:
 	Retriever	- Retrieves Info from Database and Submits
         Crawler		- Crawls URLs for Info
 	Indexer		- Indexes Pages into Database
+	Page Parse	- JSoup Reads a Page and Returns as Structure
 		
 
-Admit <==> //Crawler// <-->  //Indexer//
+Admit <==> //Crawler// <-->  //Indexer// <==> //Page Parse//
 
 			      |
 			      v
@@ -45,14 +46,23 @@ User <==> //Retriever// <-- //DB//
 	Input:	x	
 	Call:	Indexer for Page Index
 	Output:	x
-	Proposed method: Working URL Doc? (Server Storage May Add Extra Run-Time)
+	Proposed method: MySQL Database Usage
+	Proposed method: Switchability between External / Internal Database
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////// Indexer
 
 	Input:	URL
+	Calls: 	Page Parse
 	Call:	Database for Storage
 	Output:	Database Entry
 	Proposed method: MySQL Database Usage
+	Proposed method: Switchability between External / Internal Database
 
 	HashMap: "Term - URL - Count"
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////// Page Indexer
+
+	Input:	Url
+	Output:	Object of Parsed Data
