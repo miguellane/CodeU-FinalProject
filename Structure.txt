@@ -31,7 +31,7 @@ User <==> //Retriever// <-- //DB//
 	Call:	Database for Information
 	Output:	Printed List of URLs by Relevance
 	Proposed method: jOpt-Simple
-	Proposed method: Heapsort
+	Added method: Heapsort
 	Proposed method: TF-IDF
 	Proposed method: Print of Results as Retrieved (Seperate Heapsorts into Restricted Heapsorts, Print Results 10 at a Time)
 
@@ -62,7 +62,7 @@ User <==> //Retriever// <-- //DB//
 	HashMap: "Term - URL - Count"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-////////// Page Indexer
+////////// Page Parser
 
 	Input:	Url
 	Output:	Object of Parsed Data

@@ -1,4 +1,4 @@
-package com.flatironschool.javacs;
+package SearchEngine;
 
 
 import java.io.BufferedReader;
@@ -27,7 +27,7 @@ public class JedisMaker {
 
 		// assemble the file name
 		String slash = File.separator;
-		String filename = "resources" + slash + "redis_url.txt";
+		String filename = "SearchEngine" + slash + "redis_url.txt";
 		URL fileURL = JedisMaker.class.getClassLoader().getResource(filename);
                 String filepath = URLDecoder.decode(fileURL.getFile(), "UTF-8");
 

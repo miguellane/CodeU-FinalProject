@@ -1,4 +1,4 @@
-package com.flatironschool.javacs;
+package SearchEngine;
 
 import java.io.File;
 import java.io.IOException;

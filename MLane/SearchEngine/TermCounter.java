@@ -1,4 +1,4 @@
-package com.flatironschool.javacs;
+package SearchEngine;
 
 import java.io.IOException;
 import java.util.HashMap;
