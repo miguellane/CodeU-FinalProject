@@ -6,4 +6,4 @@ git push
 
 javac -cp '.:joptsimple.jar:jedis.jar:jsoup.jar' SearchEngine/*.java
 
-java -cp '.:joptsimple.jar:jedis.jar:jsoup.jar' SearchEngine.Run
+java -cp '.:joptsimple.jar:jedis.jar:jsoup.jar' SearchEngine.Retriever
