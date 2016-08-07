@@ -5,10 +5,10 @@ git commit -am "Sub Branch Test!"
 git push
 
 javac -cp '.:joptsimple.jar:jedis.jar:jsoup.jar' SearchEngine/*.java
-
+javac -cp '.;joptsimple.jar;jedis.jar;jsoup.jar' SearchEngine/*.java
 //Quick Compile
 java -cp '.:joptsimple.jar:jedis.jar:jsoup.jar' SearchEngine.Retriever
-
+javac -cp '.;joptsimple.jar;jedis.jar;jsoup.jar' SearchEngine/*.java
 //Jar Option
 jar cvfm SearchEngine.jar manifest.txt SearchEngine/*.class
 java -jar SearchEngine.jar
