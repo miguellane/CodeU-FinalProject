@@ -26,25 +26,25 @@ public class Retriever {
 		Map<String, Integer> map = index.getCounts(term);
 		this.map = map;
 	}
-
-
 	public Retriever(Map<String, Integer> map) {
 		this.map = map;
 	}
+	public Retriever(){
+	}
 
+	public void search(String term, JedisIndex index) {
+		this.map = index.getCounts(term);
+	}
 	public Integer getRelevance(String url) {
 		Integer relevance = map.get(url);
 		return relevance==null ? 0: relevance;
 	}
-	
-
 	public  void print() {
 		List<Entry<String, Integer>> entries = sort();
 		for (Entry<String, Integer> entry: entries) {
 			System.out.println(entry);
 		}
 	}
-	
 	public Retriever or(Retriever that) {
 		Map<String, Integer> temp = map;
 		for(String key: that.map.keySet()){
@@ -58,7 +58,6 @@ public class Retriever {
 		}
 		return new Retriever(temp);
 	}
-	
 	public Retriever and(Retriever that) {
 	Map<String, Integer> temp = new HashMap<>();
 		for(String key: that.map.keySet()){
@@ -68,7 +67,6 @@ public class Retriever {
 		}
 		return new Retriever(temp);
 	}
-	
 	public Retriever minus(Retriever that) {
 		Map<String, Integer> temp = map;
 		for(String key: that.map.keySet()){
@@ -105,8 +103,4 @@ public class Retriever {
 		}	
 	};
 
-	public static Retriever search(String term, JedisIndex index) {
-		Map<String, Integer> map = index.getCounts(term);
-		return new Retriever(map);
-	}
 }

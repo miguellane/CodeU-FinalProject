@@ -25,6 +25,11 @@ Ideas:
 				           v
 User <==> //Run// <==> //Retriever// <-- //DB//
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////// Run
+
+	Proposed methods: AND, OR, -, IFL:, SITE:
+	Rejected method: jOpt-Simple
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////// Retriever
@@ -32,16 +37,10 @@ User <==> //Run// <==> //Retriever// <-- //DB//
 	Input: 	String Line & Call to Java
 	Call:	Database for Information
 	Output:	Printed List of URLs by Relevance
-	Proposed method: jOpt-Simple
 	Added method: Heapsort
 	Proposed method: TF-IDF
 	Proposed method: Print of Results as Retrieved (Seperate Heapsorts into Restricted Heapsorts, Print Results 10 at a Time)
-
-	Operators: AND, OR, -, IFL:, SITE:, 50..100
-
 	
-
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////// Crawler
 

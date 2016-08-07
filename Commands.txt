@@ -4,12 +4,12 @@ git add --all
 git commit -am "Sub Branch Test!"
 git push
 
-javac -cp '.:joptsimple.jar:jedis.jar:jsoup.jar' SearchEngine/*.java
-javac -cp '.;joptsimple.jar;jedis.jar;jsoup.jar' SearchEngine/*.java
+javac -cp '.:jedis.jar:jsoup.jar' SearchEngine/*.java
+javac -cp '.;jedis.jar;jsoup.jar' SearchEngine/*.java
 
 //Quick Compile
-java -cp '.:joptsimple.jar:jedis.jar:jsoup.jar' SearchEngine.Run
-java -cp '.;joptsimple.jar;jedis.jar;jsoup.jar' SearchEngine.Retriever
+java -cp '.:jedis.jar:jsoup.jar' SearchEngine.Run
+java -cp '.;jedis.jar;jsoup.jar' SearchEngine.Retriever
 
 //Jar Option
 jar cvfm SearchEngine.jar manifest.txt SearchEngine/*.class
