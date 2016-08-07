@@ -1,4 +1,4 @@
 Manifest-Version: .1
-Main-Class: SearchEngine.Retriever
+Main-Class: SearchEngine.Run
 Class-Path: jedis.jar jsoup.jar
 
