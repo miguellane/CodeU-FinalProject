@@ -1,0 +1,4 @@
+Manifest-Version: .1
+Main-Class: SearchEngine.Retriever
+Class-Path: jedis.jar joptsimple.jar jsoup.jar
+

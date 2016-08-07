@@ -7,6 +7,8 @@ Ideas:
 	Operator "Site:" URL Filter
 	Joke: "Cringe: Apple" Results of "Apple" in Comic Sans
 
+	Jar Application (Need to edit jedismaker)
+	Condense files
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////// General Parts
 
@@ -17,11 +19,11 @@ Ideas:
 	Page Parse	- JSoup Reads a Page and Returns as Structure
 		
 
-Admit <==> //Crawler// <-->  //Indexer// <==> //Page Parse//
+         Admit <==> //Crawler// <-->  //Indexer// <==> //Page Parse//
 
-			      |
-			      v
-User <==> //Retriever// <-- //DB//
+				           |
+				           v
+User <==> //Run// <==> //Retriever// <-- //DB//
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
