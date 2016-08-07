@@ -29,27 +29,12 @@ public class Run {
 			case "Cringe:":	option = 3;	break;
 		}
 		for(int i = 0; i < searches.length; i++ ){
+			System.out.println((char)27 + "[34;43mBlue text with yellow background");
 			String search = searches[i];
 			System.out.println("Query: " + search);
 			Retriever search1 = new Retriever(search, index);
 			search1.print();
 		}
-//		String term2 = "programming";
-//		System.out.println("Query: " + term2);
-//		Retriever search2 = search(term2, index);
-//		search2.print();
-		
-//		System.out.println("Query: " + term1 + " AND " + term2);
-//		Retriever intersection = search1.and(search2);
-//		intersection.print();
-
-
-		//		Run test = new Run();
-		//		System.out.println(retriever);
-
-		//System.out.println("test");
-		//Retriever retriever = new Retriever();
-		//retriever.runner();
 
 	}
 
