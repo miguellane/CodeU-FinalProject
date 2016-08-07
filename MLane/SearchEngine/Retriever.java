@@ -14,7 +14,7 @@ import java.util.Map.Entry;
 
 import java.util.PriorityQueue;
 
-import redis.clients.jedis.Jedis;
+
 
 
 
@@ -22,6 +22,11 @@ public class Retriever {
 	
 // map from URLs that contain the term(s) to relevance score
 	private Map<String, Integer> map;
+	public Retriever(String term, JedisIndex index){
+		Map<String, Integer> map = index.getCounts(term);
+		this.map = map;
+	}
+
 
 	public Retriever(Map<String, Integer> map) {
 		this.map = map;
@@ -33,7 +38,7 @@ public class Retriever {
 	}
 	
 
-	private  void print() {
+	public  void print() {
 		List<Entry<String, Integer>> entries = sort();
 		for (Entry<String, Integer> entry: entries) {
 			System.out.println(entry);
@@ -102,38 +107,6 @@ public class Retriever {
 
 	public static Retriever search(String term, JedisIndex index) {
 		Map<String, Integer> map = index.getCounts(term);
-//		int docTotal = 
 		return new Retriever(map);
-	}
-
-	public static void main(String[] args) throws IOException {
-		
-		// make a JedisIndex
-		Jedis jedis = JedisMaker.make();
-		JedisIndex index = new JedisIndex(jedis); 
-		
-		// search for the first term
-		String term1 = "java";
-		System.out.println("Query: " + term1);
-		Retriever search1 = search(term1, index);
-		search1.print();
-		
-		// search for the second term
-		String term2 = "programming";
-		System.out.println("Query: " + term2);
-		Retriever search2 = search(term2, index);
-		search2.print();
-		
-		// compute the intersection of the searches
-		System.out.println("Query: " + term1 + " AND " + term2);
-		Retriever intersection = search1.and(search2);
-		intersection.print();
-	}
-
-
-	public void runner(){
-		System.out.println("Hello!");
-
-
 	}
 }
