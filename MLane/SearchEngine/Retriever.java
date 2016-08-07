@@ -3,20 +3,13 @@ package SearchEngine;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Comparator;
-
-
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-
 import java.util.PriorityQueue;
-
-
-
-
 
 public class Retriever {
 	
@@ -31,7 +24,7 @@ public class Retriever {
 	}
 	public Retriever(){
 	}
-
+//Methods Begin
 	public void search(String term, JedisIndex index) {
 		this.map = index.getCounts(term);
 	}

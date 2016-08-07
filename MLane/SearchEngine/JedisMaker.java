@@ -1,6 +1,7 @@
 package SearchEngine;
 
-
+import java.io.InputStreamReader;
+import java.io.InputStream;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -29,12 +30,14 @@ public class JedisMaker {
 		String slash = File.separator;
 		String filename = "SearchEngine" + slash + "redis_url.txt";
 		URL fileURL = JedisMaker.class.getClassLoader().getResource(filename);
-                String filepath = URLDecoder.decode(fileURL.getFile(), "UTF-8");
+		String filepath = URLDecoder.decode(fileURL.getFile(), "UTF-8");
+//		InputStream in = JedisMaker.class.getClassLoader().getResourceAsStream(filename);
 
                 StringBuilder sb = new StringBuilder();
 		BufferedReader br;
 		try {
-                    br = new BufferedReader(new FileReader(filepath));
+                  br = new BufferedReader(new FileReader(filepath));
+//  		    br = new BufferedReader(new InputStreamReader(in));
 		} catch (FileNotFoundException e1) {
                     System.out.println("File not found: " + filename);
                     printInstructions();
