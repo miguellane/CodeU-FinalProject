@@ -13,3 +13,6 @@ java -cp '.:jedis.jar:jsoup.jar' SearchEngine.Run
 ==Jar Option (Run javac prior)
 jar cvfm SearchEngine.jar manifest.txt SearchEngine/*.class
 java -jar SearchEngine.jar
+
+
+javac -cp '.:jedis.jar:jsoup.jar' SearchEngine/*.java;java -cp '.:jedis.jar:jsoup.jar' SearchEngine.Run
