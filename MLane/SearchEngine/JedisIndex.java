@@ -22,11 +22,6 @@ public class JedisIndex {
 
 	private Jedis jedis;
 
-	/**
-	 * Constructor.
-	 * 
-	 * @param jedis
-	 */
 	public JedisIndex(Jedis jedis) {
 		this.jedis = jedis;
 	}
@@ -294,22 +289,4 @@ public class JedisIndex {
 		t.exec();
 	}
 
-
-	/**
-	 * Stores two pages in the index for testing purposes.
-	 * 
-	 * @return
-	 * @throws IOException
-	 */
-	private static void loadIndex(JedisIndex index) throws IOException {
-		WikiFetcher wf = new WikiFetcher();
-
-		String url = "https://en.wikipedia.org/wiki/Java_(programming_language)";
-		Elements paragraphs = wf.readWikipedia(url);
-		index.indexPage(url, paragraphs);
-		
-		url = "https://en.wikipedia.org/wiki/Programming_language";
-		paragraphs = wf.readWikipedia(url);
-		index.indexPage(url, paragraphs);
-	}
 }

@@ -1,5 +1,4 @@
 Ideas:
-	Stream Certain Methods
 	Generate Searches as Results Appear (10 pages at a time perhaps)
 	Ignore Insig. Keyword
 
@@ -7,7 +6,7 @@ Ideas:
 	Operator "Site:" URL Filter
 	Joke: "Cringe: Apple" Results of "Apple" in Comic Sans
 
-	Jar Application (Need to edit jedismaker)
+	+ Jar Application (Need to edit jedismaker)
 	Condense files
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////// General Parts
@@ -19,11 +18,11 @@ Ideas:
 	Page Parse	- JSoup Reads a Page and Returns as Structure
 		
 
-         Admit <==> //Crawler// <-->  //Indexer// <==> //Page Parse//
+         Admin <==> //Crawler// <-->  //Indexer// <==> //Page Parse//
 
 				           |
 				           v
-User <==> //Run// <==> //Retriever// <-- //DB//
+User <==> //Run// <==> //Retriever// <-- \\DB\\
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////// Run
