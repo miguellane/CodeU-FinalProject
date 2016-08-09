@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.PriorityQueue;
+import java.lang.Math;
+
 
 public class Retriever {
 	
@@ -18,6 +20,11 @@ public class Retriever {
 	public Retriever(String term, JedisIndex index){
 		Map<String, Integer> map = index.getCounts(term);
 		this.map = map;
+		double rel = Math.log((double)index.urlNum()/(double)map.size());
+		for(String key: map.keySet()){
+			int n = map.get(key);
+			map.put(key, (int)(n*rel));
+		}
 	}
 	public Retriever(Map<String, Integer> map) {
 		this.map = map;
@@ -25,9 +32,6 @@ public class Retriever {
 	public Retriever(){
 	}
 //Methods Begin
-	public void search(String term, JedisIndex index) {
-		this.map = index.getCounts(term);
-	}
 	public Integer getRelevance(String url) {
 		Integer relevance = map.get(url);
 		return relevance==null ? 0: relevance;
@@ -80,9 +84,9 @@ public class Retriever {
 		List<Entry<String,Integer>> list = new LinkedList<Entry<String,Integer>>();
 		list.addAll(map.entrySet());
 //Merge Sort, Single List		
-		Collections.sort(list, comparator);
+//		Collections.sort(list, comparator);
 //Heap Sort, Ability to Grab Top 10
-/*		int i = list.size();
+		int i = list.size();
 		PriorityQueue<Entry<String,Integer>> queue = new PriorityQueue<Entry<String,Integer>>(i,comparator);
 		for(Entry<String,Integer> element: list){
 			queue.offer(element);
@@ -91,7 +95,7 @@ public class Retriever {
 		for(i = i; i != 0; i--){
 			list.add(queue.poll());
 		}
-*/		return list;
+		return list;
 	}
 	Comparator <Entry<String,Integer>> comparator= new Comparator<Entry<String,Integer>>(){	
 		@Override

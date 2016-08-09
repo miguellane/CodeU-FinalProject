@@ -36,7 +36,7 @@ User <==> //Run// <==> //Retriever// <-- \\DB\\
 	Call:	Database for Information
 	Output:	Printed List of URLs by Relevance
 	Added method: Heapsort
-	Proposed method: TF-IDF
+	Added method: TF-IDF
 	Proposed method: Print of Results as Retrieved (Seperate Heapsorts into Restricted Heapsorts, Print Results 10 at a Time)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////

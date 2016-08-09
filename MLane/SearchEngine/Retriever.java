@@ -20,12 +20,11 @@ public class Retriever {
 	public Retriever(String term, JedisIndex index){
 		Map<String, Integer> map = index.getCounts(term);
 		this.map = map;
-//		for(String key: map.keySet()){
-//			int n = map.get(key);
-//			double rel = Math.log(map.size()/index.urlNum());
-//			int relScore = n*(int)rel;
-//			map.put(key, relScore);
-//		}
+		double rel = Math.log((double)index.urlNum()/(double)map.size());
+		for(String key: map.keySet()){
+			int n = map.get(key);
+			map.put(key, (int)(n*rel));
+		}
 	}
 	public Retriever(Map<String, Integer> map) {
 		this.map = map;
