@@ -32,6 +32,14 @@ public class Retriever {
 		Integer relevance = map.get(url);
 		return relevance==null ? 0: relevance;
 	}
+	public List<String> stringPrint(){
+		List<Entry<String, Integer>> entries = sort();
+		List<String> list = new ArrayList<String>();
+		for (Entry<String, Integer> entry: entries) {
+			list.add(entry.getKey());
+		}
+		return list;
+	}
 	public  void print() {
 		List<Entry<String, Integer>> entries = sort();
 		for (Entry<String, Integer> entry: entries) {
@@ -89,9 +97,9 @@ public class Retriever {
 		@Override
 		public int compare(Entry<String,Integer> entry1, Entry<String,Integer> entry2){
 			if(entry1.getValue() > entry2.getValue())
-				return 1;
+				return -1;
 			if(entry1.getValue() < entry2.getValue())
-				return -1; 
+				return 1; 
 			return 0;		
 		}	
 	};
