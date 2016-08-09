@@ -32,6 +32,14 @@ public class Retriever {
 		Integer relevance = map.get(url);
 		return relevance==null ? 0: relevance;
 	}
+	public List<String> stringPrint(){
+		List<Entry<String, Integer>> entries = sort();
+		List<String> list = new ArrayList<String>();
+		for (Entry<String, Integer> entry: entries) {
+			list.add(entry.getKey());
+		}
+		return list;
+	}
 	public  void print() {
 		List<Entry<String, Integer>> entries = sort();
 		for (Entry<String, Integer> entry: entries) {

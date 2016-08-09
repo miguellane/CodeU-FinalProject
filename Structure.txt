@@ -18,7 +18,7 @@ Ideas:
 	Page Parse	- JSoup Reads a Page and Returns as Structure
 		
 
-         Admin <==> //Crawler// <-->  //Indexer// <==> //Page Parse//
+         Admin <==> //Crawler// <-->  //Indexer//
 
 				           |
 				           v
@@ -39,21 +39,11 @@ User <==> //Run// <==> //Retriever// <-- \\DB\\
 	Added method: Heapsort
 	Proposed method: TF-IDF
 	Proposed method: Print of Results as Retrieved (Seperate Heapsorts into Restricted Heapsorts, Print Results 10 at a Time)
-	
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////// Crawler
-
-	Input:	x	
-	Call:	Indexer for Page Index
-	Output:	x
-	Proposed method: MySQL Database Usage
-	Proposed method: Switchability between External / Internal Database
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////// Indexer
 
 	Input:	URL
-	Calls: 	Page Parse
 	Call:	Database for Storage
 	Output:	Database Entry
 	Proposed method: MySQL Database Usage

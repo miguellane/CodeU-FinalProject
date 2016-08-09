@@ -29,8 +29,8 @@ public class Run {
 		switch(searches[0]){
 			case "Crawl:":
 				option = 1;
-//				String source = "https://en.wikipedia.org/wiki/Java_(programming_language)";
-//				WikiCrawler wc = new WikiCrawler(source, index);
+				System.out.println("Why?");
+				WikiCrawler wc = new WikiCrawler("https://en.wikipedia.org/wiki/Java_(programming_language)", index);
 				break;
 //			case "Site:":	option = 2;	break;
 //			case "IFL:":	option = 3;	break;
@@ -43,8 +43,8 @@ public class Run {
 			result = operators(Arrays.copyOfRange(searches, 1, searches.length), index);
 		else
 			result = operators(searches, index);		
-		result.print();
-
+//		result.print();
+		result.stringPrint();
 	}
 
 //Takes in working string, recursively parses and calls retriever options to output single retriever object.
