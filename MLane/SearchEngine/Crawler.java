@@ -1,16 +1,12 @@
 package SearchEngine;
 
-import java.io.File;
+
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
 import java.util.LinkedList;
-import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Queue;
 
-import org.jsoup.Connection;
 import org.jsoup.Jsoup;
+import org.jsoup.Connection;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -18,7 +14,7 @@ import org.jsoup.select.Elements;
 import redis.clients.jedis.Jedis;
 
 
-public class WikiCrawler {
+public class Crawler {
 	private final String source;
 	private JedisIndex index;
 	private Queue<String> queue = new LinkedList<String>();
@@ -26,7 +22,7 @@ public class WikiCrawler {
 	private long lastRequestTime = -1;
 	private long minInterval = 1000;
 
-	public WikiCrawler(String source, JedisIndex index) {
+	public Crawler(String source, JedisIndex index) {
 		this.source = source;
 		this.index = index;
 		queue.offer(source);
@@ -58,6 +54,7 @@ public class WikiCrawler {
 				String newUrl = link.attr("href");
 				if(newUrl.startsWith("/wiki/")){
 					newUrl = "https://en.wikipedia.org" + newUrl;
+//					System.out.println(newUrl);
 					queue.offer(newUrl);
 				}
 			}
@@ -91,17 +88,15 @@ public class WikiCrawler {
 
 
 	public void run() throws IOException {
-
+		int i = 300;
 		Elements paragraphs = fetchWikipedia(source);
 		queueInternalLinks(paragraphs);
 		String res;
 		do {
 			res = crawl();
-		} while (res == null);
-		
-//		Map<String, Integer> map = index.getCounts("the");
-//		for (Entry<String, Integer> entry: map.entrySet()) {
-//			System.out.println(entry);
-//		}
+//			System.out.println(res);
+			i--;
+//		} while (res == null);
+		} while (i != 0);
 	}
 }

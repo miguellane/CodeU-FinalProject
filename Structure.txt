@@ -7,7 +7,7 @@ Ideas:
 	Joke: "Cringe: Apple" Results of "Apple" in Comic Sans
 
 	+ Jar Application (Need to edit jedismaker)
-	Condense files
+	+ Condense files
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////// General Parts
 
@@ -27,8 +27,7 @@ User <==> //Run// <==> //Retriever// <-- \\DB\\
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////// Run
 
-	Proposed methods: AND, OR, -, IFL:, SITE:
-	Rejected method: jOpt-Simple
+	Added methods: AND, OR, -, Crawl:
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////// Retriever
@@ -43,16 +42,16 @@ User <==> //Run// <==> //Retriever// <-- \\DB\\
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////// Indexer
 
-	Input:	URL
+	Input:	Database Information
 	Call:	Database for Storage
 	Output:	Database Entry
-	Proposed method: MySQL Database Usage
+	Added method: Redis 30MB Database Usage
 	Proposed method: Switchability between External / Internal Database
 
-	HashMap: "Term - URL - Count"
+	HashMap: "Term < URL - Count >"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-////////// Page Parser
+////////// Crawler
 
 	Input:	Url
-	Output:	Object of Parsed Data
+	Call:	Indexer for Storage

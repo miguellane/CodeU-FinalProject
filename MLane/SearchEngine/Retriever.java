@@ -97,9 +97,9 @@ public class Retriever {
 		@Override
 		public int compare(Entry<String,Integer> entry1, Entry<String,Integer> entry2){
 			if(entry1.getValue() > entry2.getValue())
-				return 1;
+				return -1;
 			if(entry1.getValue() < entry2.getValue())
-				return -1; 
+				return 1; 
 			return 0;		
 		}	
 	};
