@@ -22,7 +22,7 @@ public class Run {
 
 		System.out.println("Hello, please enter a search phrase, all lowercase:");
 		System.out.println("Two terms not seperated by operator will be treated as AND:");
-		System.out.println("Operators include 'AND', 'OR', '-':");
+		System.out.println("Operators include 'Crawl:', 'AND', 'OR', '-':");
 //		System.out.println("Prefixes include 'Crawl:', 'Site:', 'Cringe:', 'IFL:'");
 		String cmdLine = reader.nextLine();
 		String[] searches = cmdLine.split("\\s+");
